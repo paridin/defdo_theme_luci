@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-theme-defdo
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=1
 PKG_LICENSE:=Apache-2.0
 PKG_MAINTAINER:=paridin
@@ -53,6 +53,9 @@ define Package/luci-theme-defdo/install
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./root/etc/uci-defaults/30_luci-theme-defdo \
 		$(1)/etc/uci-defaults/30_luci-theme-defdo
+
+	$(INSTALL_DIR) $(1)/usr/share/luci-theme-defdo
+	printf '%s\n' '$(PKG_VERSION)-r$(PKG_RELEASE)' > $(1)/usr/share/luci-theme-defdo/VERSION
 
 	$(INSTALL_DIR) $(1)/usr/share/ucode/luci/template/themes/defdo
 	$(INSTALL_DATA) ./ucode/template/themes/defdo/header.ut \

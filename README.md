@@ -38,12 +38,12 @@ OPENWRT_DIR=/path/to/openwrt ./scripts/build_luci_theme_defdo.sh
 Expected output:
 
 ```text
-openwrt/bin/packages/<arch>/base/luci-theme-defdo_1.0.0-r1_all.ipk
+openwrt/bin/packages/<arch>/base/luci-theme-defdo_1.0.1-r1_all.ipk
 ```
 
 Versioning uses standard OpenWrt package fields:
 
-- `PKG_VERSION=1.0.0`
+- `PKG_VERSION=1.0.1`
 - `PKG_RELEASE=1` which OpenWrt emits as `r1` in the final `.ipk` filename
 
 ## Publish a Release
@@ -57,7 +57,7 @@ If `gh auth status` works:
 Or with an explicit tag:
 
 ```bash
-./scripts/release_luci_theme_defdo.sh v1.0.0-r1
+./scripts/release_luci_theme_defdo.sh v1.0.1-r1
 ```
 
 ## GitHub Actions
