@@ -70,7 +70,9 @@ jobs:
         run: |
           tag="${{ inputs.tag }}"
           if [ -z "$tag" ]; then
-            tag="luci-theme-defdo-${GITHUB_RUN_NUMBER}"
+            version="$(sed -n 's/^PKG_VERSION:=//p' packages/luci-theme-defdo/Makefile | head -n 1)"
+            release="$(sed -n 's/^PKG_RELEASE:=//p' packages/luci-theme-defdo/Makefile | head -n 1)"
+            tag="v${version}-${release}"
           fi
 
           notes="$(mktemp)"

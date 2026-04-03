@@ -5,13 +5,17 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 openwrt_dir="${OPENWRT_DIR:-"$repo_root/openwrt"}"
 repo="${GH_REPO:-}"
 tag="${1:-}"
+package_makefile="$repo_root/packages/luci-theme-defdo/Makefile"
+
+package_version="$(sed -n 's/^PKG_VERSION:=//p' "$package_makefile" | head -n 1)"
+package_release="$(sed -n 's/^PKG_RELEASE:=//p' "$package_makefile" | head -n 1)"
 
 if [[ -z "$repo" ]]; then
 	repo="$(gh repo view --json nameWithOwner -q .nameWithOwner)"
 fi
 
 if [[ -z "$tag" ]]; then
-	tag="luci-theme-defdo-$(date -u +%Y%m%d-%H%M%S)"
+	tag="v${package_version}-${package_release}"
 fi
 
 ipk="$(find "$openwrt_dir/bin/packages" -type f -name 'luci-theme-defdo_*_all.ipk' | sort | tail -n 1 || true)"
@@ -35,6 +39,9 @@ Release for luci-theme-defdo
 
 Package:
 - $(basename "$ipk")
+
+Package version:
+- ${package_version}-${package_release}
 
 Source:
 - $(git -C "$repo_root" rev-parse --short HEAD)
