@@ -1,0 +1,68 @@
+/*
+ * defdo.dev LuCI branding
+ */
+
+:root,
+.theme-defdo {
+	--color-main-background: 20, 0, 33;
+	--color-component-background: 20, 0, 33;
+	--color-footer-background: 5, 0, 15;
+	--color-border-muted: 31, 29, 54;
+	--color-default: 250, 250, 250;
+	--color-muted: 222, 222, 222;
+	--color-footer-contrast: 222, 222, 222;
+	--color-primary: 249, 188, 2;
+	--color-secondary: 249, 188, 50;
+	--color-primary-contrast: 26, 27, 30;
+
+	--background-color-high: rgb(var(--color-main-background));
+	--background-color-medium: rgb(16, 0, 28);
+	--background-color-low: rgb(var(--color-footer-background));
+
+	--text-color-highest: rgb(var(--color-default));
+	--text-color-high: rgb(var(--color-default));
+	--text-color-medium: rgb(var(--color-muted));
+	--text-color-low: rgb(var(--color-muted));
+
+	--border-color-high: rgb(var(--color-border-muted));
+	--border-color-medium: rgb(var(--color-border-muted));
+	--border-color-low: rgb(var(--color-border-muted));
+
+	--primary-color-high: rgb(var(--color-primary));
+	--primary-color-medium: rgb(var(--color-secondary));
+	--primary-color-low: rgb(var(--color-secondary));
+	--on-primary-color: rgb(var(--color-primary-contrast));
+
+	--warn-color-high: rgb(var(--color-primary));
+	--warn-color-medium: rgb(var(--color-secondary));
+	--warn-color-low: rgb(var(--color-secondary));
+	--on-warn-color: rgb(var(--color-primary-contrast));
+}
+
+header {
+	background: linear-gradient(
+		90deg,
+		rgb(var(--color-main-background)),
+		rgb(var(--color-footer-background))
+	) !important;
+}
+
+header .defdo-brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-right: 20px;
+	font-weight: 600;
+}
+
+header .defdo-brand .defdo-logo {
+	height: 18px;
+	width: auto;
+	display: block;
+}
+
+header .defdo-brand span {
+	color: rgb(var(--color-default));
+	font-size: 18px;
+	line-height: 1;
+}

@@ -1,0 +1,7 @@
+openwrt/
+*.ipk
+*.apk
+*.sha256
+*.log
+dist/
+tmp/
