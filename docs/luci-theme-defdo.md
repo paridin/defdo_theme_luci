@@ -28,13 +28,13 @@ That script does this:
 Expected output package:
 
 ```text
-openwrt/bin/packages/<arch>/base/luci-theme-defdo_1.0.0-1_all.ipk
+openwrt/bin/packages/<arch>/base/luci-theme-defdo_1.0.0-r1_all.ipk
 ```
 
 Versioning follows the standard OpenWrt package flow:
 
 - `PKG_VERSION`: semantic package version, currently `1.0.0`
-- `PKG_RELEASE`: package revision for the same version, currently `1`
+- `PKG_RELEASE`: package revision for the same version, currently `1` and emitted by OpenWrt as `r1` in the final package filename
 
 That means:
 
@@ -66,14 +66,14 @@ If `gh auth status` works, create or update a release with the latest built pack
 You can provide a fixed tag:
 
 ```bash
-./scripts/release_luci_theme_defdo.sh v1.0.0-1
+./scripts/release_luci_theme_defdo.sh v1.0.0-r1
 ```
 
 What it does:
 
 1. builds the package if no `.ipk` exists yet
 2. generates a `.sha256` file
-3. defaults the release tag to `v<PKG_VERSION>-<PKG_RELEASE>`
+3. defaults the release tag to `v<ipk-version>` using the actual built artifact version, e.g. `v1.0.0-r1`
 4. creates a release or uploads over an existing one using `gh release`
 
 ## GitHub Actions

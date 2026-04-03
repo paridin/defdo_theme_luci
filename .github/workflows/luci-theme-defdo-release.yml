@@ -70,9 +70,9 @@ jobs:
         run: |
           tag="${{ inputs.tag }}"
           if [ -z "$tag" ]; then
-            version="$(sed -n 's/^PKG_VERSION:=//p' packages/luci-theme-defdo/Makefile | head -n 1)"
-            release="$(sed -n 's/^PKG_RELEASE:=//p' packages/luci-theme-defdo/Makefile | head -n 1)"
-            tag="v${version}-${release}"
+            ipk_name="$(basename "${{ steps.collect.outputs.ipk }}")"
+            ipk_version="$(printf '%s' "$ipk_name" | sed -E 's/^luci-theme-defdo_([^_]+)_all\.ipk$/\1/')"
+            tag="v${ipk_version}"
           fi
 
           notes="$(mktemp)"
