@@ -9,6 +9,10 @@ All notable changes to this project are documented in this file.
 - Improved top navigation and dropdown contrast in the `defdo` theme.
 - Added a packaged theme version marker at:
   - `/usr/share/luci-theme-defdo/VERSION`
+- Added end-user installation documentation for:
+  - `opkg`-based OpenWrt
+  - `apk`-based OpenWrt
+  - manual version verification after installation
 - Published the `v1.0.1-r1` release artifact:
   - `luci-theme-defdo_1.0.1-r1_all.ipk`
 

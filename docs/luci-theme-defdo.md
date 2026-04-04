@@ -6,6 +6,10 @@
 
 It is no longer treated as a hand-edited package living permanently inside the local OpenWrt buildroot.
 
+For end-user installation instructions on existing routers, see:
+
+- [install.md](install.md)
+
 ## Local Build
 
 Requirements:

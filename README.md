@@ -9,6 +9,7 @@ This repository keeps the theme source independent from any specific local OpenW
 - a local build script for the `.ipk`
 - a release script using `gh`
 - a GitHub Actions workflow that builds and publishes the package
+- installation documentation for end users
 
 ## Repository Layout
 
@@ -18,8 +19,25 @@ scripts/sync_luci_theme_defdo.sh
 scripts/build_luci_theme_defdo.sh
 scripts/release_luci_theme_defdo.sh
 docs/luci-theme-defdo.md
+docs/install.md
 .github/workflows/luci-theme-defdo-release.yml
 ```
+
+## Install on OpenWrt
+
+If you already have an OpenWrt device with LuCI, use the latest GitHub release:
+
+- `https://github.com/paridin/defdo_theme_luci/releases/latest`
+
+Installation options:
+
+- `opkg` devices: install the `.ipk` directly
+- `apk` devices: install by extracting the package contents
+- manual verification: check `/usr/share/luci-theme-defdo/VERSION`
+
+Full instructions:
+
+- [docs/install.md](docs/install.md)
 
 ## Local Build
 
@@ -73,3 +91,4 @@ Use the manual workflow `luci-theme-defdo-release` to:
 More detail:
 
 - [docs/luci-theme-defdo.md](docs/luci-theme-defdo.md)
+- [docs/install.md](docs/install.md)
